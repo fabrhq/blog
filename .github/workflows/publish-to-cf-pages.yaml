@@ -13,7 +13,7 @@ jobs:
       - name: Install NPM
         uses: actions/setup-node@v3
         with:
-          node-version: 19
+          node-version-file: '.node-version'
       - name: CI
         run: npm ci
       - name: Build
