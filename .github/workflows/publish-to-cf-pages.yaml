@@ -10,8 +10,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+      - name: CI
+        run: npm ci
       - name: Build
-        run: npm i && npm run build
+        run: npm run build
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
