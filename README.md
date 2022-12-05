@@ -1,2 +1,3 @@
-# fabrhq-blog
-The FABR blog hosted on https://fabrhq.com/blog
+# FABR Blog
+
+The FABR blog hosted on <https://fabrhq.com/blog>
