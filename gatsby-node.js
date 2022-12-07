@@ -103,8 +103,16 @@ exports.createSchemaCustomization = ({ actions }) => {
       summary: String
     }
 
+    type AuthorProfile {
+      name: String
+      photo: String
+      social: Social
+      bioDescription: String
+    }
+
     type Social {
-      twitter: String
+      twitterHandle: String
+      linkedinHandle: String
     }
 
     type MarkdownRemark implements Node {
@@ -115,6 +123,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Frontmatter {
       title: String
       description: String
+      author: String
       date: Date @dateformat
     }
 

@@ -10,7 +10,6 @@ const BlogPostTemplate = ({
   location,
 }) => {
   const siteTitle = site.siteMetadata?.title || `Title`
-
   return (
     <Layout location={location} title={siteTitle}>
       <article
@@ -28,7 +27,7 @@ const BlogPostTemplate = ({
         />
         <hr />
         <footer>
-          <Bio />
+          <Bio authorName={post.frontmatter.author}/>
         </footer>
       </article>
       <nav className="blog-post-nav">
@@ -89,6 +88,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        author
         date(formatString: "DD MMMM YYYY")
         description
       }
