@@ -18,7 +18,8 @@ module.exports = {
     description: `The FABR Blog | Updates, ideas, and opinions from FABR.`,
     siteUrl: `https://fabrhq.com`,
     social: {
-      twitter: `@fabr_hq`,
+      twitterHanlde: `@fabr_hq`,
+      linkedinHandle: `fabr`
     },
   },
   plugins: [
@@ -97,6 +98,7 @@ module.exports = {
                   }
                   frontmatter {
                     title
+                    author
                     date
                   }
                 }
