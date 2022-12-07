@@ -12,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Bio />
+        <div className="bio"><p>Updates, ideas, and opinions from FABR, a developer experience and tooling company specialising in cloud infrastructure.</p></div>
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -24,7 +24,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
+      <div className="bio"><p>Updates, ideas, and opinions from FABR, a developer experience and tooling company specialising in cloud infrastructure.</p></div>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -86,6 +86,7 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "DD MMMM YYYY")
           title
+          author
           description
         }
       }

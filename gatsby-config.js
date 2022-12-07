@@ -10,15 +10,16 @@
 module.exports = {
   pathPrefix: `/blog`,
   siteMetadata: {
-    title: `FABR Blog`,
+    title: `Blog`,
     author: {
       name: `FABRbot`,
       summary: `FABR a developer experience and tooling company specialising in cloud infrastructure.`,
     },
-    description: `FABR Blog`,
+    description: `The FABR Blog | Updates, ideas, and opinions from FABR.`,
     siteUrl: `https://fabrhq.com`,
     social: {
-      twitter: `@fabr_hq`,
+      twitterHanlde: `@fabr_hq`,
+      linkedinHandle: `fabr`
     },
   },
   plugins: [
@@ -60,6 +61,35 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://fabrhq.com`,
+        stripQueryString: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-JL6KEWW836", // Google Analytics measurement ID
+        ],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          //respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          //exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -97,6 +127,7 @@ module.exports = {
                   }
                   frontmatter {
                     title
+                    author
                     date
                   }
                 }

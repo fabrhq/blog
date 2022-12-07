@@ -252,9 +252,46 @@ a:focus {
   margin-bottom: var(--spacing-12);
 }
 
+.main-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--spacing-0);
+  margin-bottom: var(--spacing-0);
+  min-width: 25px;
+}
+
 .main-heading {
+  display: inline-block;
   font-size: var(--fontSize-7);
   margin: 0;
+}
+
+.main-heading h2 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: var(--fontSize-6);
+  font-weight: var(--fontWeight-bold);
+  margin: 0;
+}
+
+.main-heading h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: var(--fontSize-7);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.post-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: var(--spacing-0);
+  margin-bottom: var(--spacing-3px);
+  min-width: 25px;
+}
+
+.header-link-home {
+  vertical-align: middle;
 }
 
 .post-list-item {
