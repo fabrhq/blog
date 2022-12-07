@@ -10,12 +10,12 @@
 module.exports = {
   pathPrefix: `/blog`,
   siteMetadata: {
-    title: `FABR Blog`,
+    title: `Blog`,
     author: {
       name: `FABRbot`,
       summary: `FABR a developer experience and tooling company specialising in cloud infrastructure.`,
     },
-    description: `FABR Blog`,
+    description: `The FABR Blog | Updates, ideas, and opinions from FABR.`,
     siteUrl: `https://fabrhq.com`,
     social: {
       twitter: `@fabr_hq`,
