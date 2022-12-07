@@ -61,6 +61,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://fabrhq.com`,
+        stripQueryString: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
