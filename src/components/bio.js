@@ -35,7 +35,7 @@ const Bio = ({ authorName }) => {
           linkedinHandle: "janakaabeywardhana",
           githubHandle: "janaka"
         },
-        bioDescription: "Some bio text about Janaka here"
+        bioDescription: "Co-founder CPTO @ FABR. "
       }
       break;
     case "Chen Wang":
@@ -47,7 +47,7 @@ const Bio = ({ authorName }) => {
           linkedinHandle: "chenwang",
           githubHandle: "cwang",
         },
-        bioDescription: "Some bio text about Chen here"
+        bioDescription: "Co-founder CEO @ FABR. "
       }
       break;
     case "Gautam Sreekumar":
@@ -58,7 +58,7 @@ const Bio = ({ authorName }) => {
           twitterHandle: "@",
           linkedinHandle: "",
         },
-        bioDescription: "Some bio text about Gautam here"
+        bioDescription: ""
       }
       break;
     default:
