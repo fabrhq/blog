@@ -268,6 +268,10 @@ a:focus {
 
 .main-heading h2 {
   display: inline-block;
+  vertical-align: middle;
+  font-size: var(--fontSize-6);
+  font-weight: var(--fontWeight-bold);
+  margin: 0;
 }
 
 .main-heading h1 {
