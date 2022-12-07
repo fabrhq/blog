@@ -9,7 +9,7 @@ const Layout = ({ location, title, children }) => {
 
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
+      <div className="main-heading">
         <Link to="../">
           <StaticImage
             className="main-logo"
@@ -21,16 +21,20 @@ const Layout = ({ location, title, children }) => {
             quality={95}
             alt="FABR logo market"
           /></Link>
-        {' '}/{' '}
-        <Link to="/">{title}</Link>
-      </h1>
+        {' '}
+        <h2>/</h2>
+        {' '}
+        <h1>
+          <Link to="/">{title}</Link>
+        </h1>
+      </div>
     )
   } else {
     header = (
       <div>
         <Link to="../">
           <StaticImage
-            className="main-logo"
+            className="post-logo"
             layout="fixed"
             formats={["auto", "webp", "avif"]}
             src="../images/fabr-icon.png"
