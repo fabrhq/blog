@@ -81,6 +81,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
+          name: github-pages-pr-preview
           path: ./public
 
   # Deployment job
@@ -94,3 +95,5 @@ jobs:
       - name: Deploy Preview to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        with:
+          preveiew: 'true'
