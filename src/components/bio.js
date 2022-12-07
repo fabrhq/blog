@@ -5,20 +5,20 @@ import { StaticImage, GatsbyImage, getImage, getImageData } from "gatsby-plugin-
 const Bio = ({ authorName }) => {
 
   //   const data = useStaticQuery(graphql`
-//     query BioQuery {
-//       site {
-//         siteMetadata {
-//           author {
-//             name
-//             summary
-//           }
-//           social {
-//             twitterHandle
-//           }
-//         }
-//       }
-//     }
-//   `)
+  //     query BioQuery {
+  //       site {
+  //         siteMetadata {
+  //           author {
+  //             name
+  //             summary
+  //           }
+  //           social {
+  //             twitterHandle
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `)
 
   let authorProfile;
 
@@ -33,6 +33,7 @@ const Bio = ({ authorName }) => {
         social: {
           twitterHandle: "janaka_a",
           linkedinHandle: "janakaabeywardhana",
+          githubHandle: "janaka"
         },
         bioDescription: "Some bio text about Janaka here"
       }
@@ -43,7 +44,8 @@ const Bio = ({ authorName }) => {
         photoFileName: "chen-profile-pic.jpg",
         social: {
           twitterHandle: "cwang",
-          linkedinHandle: "",
+          linkedinHandle: "chenwang",
+          githubHandle: "cwang",
         },
         bioDescription: "Some bio text about Chen here"
       }
@@ -72,7 +74,7 @@ const Bio = ({ authorName }) => {
       break;
   }
 
-  
+
   // Set these values by editing "siteMetadata" in gatsby-config.js
   // const author1 = data.site.siteMetadata?.author
   // const social = data.site.siteMetadata?.social
@@ -80,37 +82,48 @@ const Bio = ({ authorName }) => {
   return (
     // StaticImage doesn't access dynamic values for the `src` prop. This is the simplest solution
     <div className="bio">
-      {(authorProfile.name=="Janaka Abeywardhana") &&
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/author-profile-photos/janaka-profile-pic-square.jpg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />}
-      {(authorProfile.name=="Chen Wang") &&
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/author-profile-photos/chen-profile-pic.jpg"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />}
+      {(authorProfile.name == "Janaka Abeywardhana") &&
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/author-profile-photos/janaka-profile-pic-square.jpg"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Profile picture"
+        />}
+      {(authorProfile.name == "Chen Wang") &&
+        <StaticImage
+          className="bio-avatar"
+          layout="fixed"
+          formats={["auto", "webp", "avif"]}
+          src="../images/author-profile-photos/chen-profile-pic.jpg"
+          width={50}
+          height={50}
+          quality={95}
+          alt="Profile picture"
+        />}
 
       {authorProfile?.name && (
-        <p>
-          Written by <strong>{authorProfile.name}</strong> {authorProfile?.bioDescription || null}
-          {` `}
-          <a href={`https://twitter.com/${authorProfile.social?.twitterHandle || ``}`}>
-            Twitter
-          </a>
-        </p>
+        <div>
+          <p>
+            Written by <strong>{authorProfile.name}</strong> {authorProfile?.bioDescription || null}
+            {` `}
+
+          </p>
+          <p>
+            {authorProfile.social?.twitterHandle && <a href={`https://twitter.com/${authorProfile.social?.twitterHandle || ``}`} target="_BLANK">
+              Twitter
+            </a>}{` `}
+            {authorProfile.social?.linkedinHandle && <a href={`https://linkedin.com/in/${authorProfile.social?.linkedinHandle || ``}`} target="_BLANK">
+              LinkedIn
+            </a>}{` `}
+            {authorProfile.social?.githubHandle && <a href={`https://github.com/${authorProfile.social?.githubHandle || ``}`} target="_BLANK">
+              Github
+            </a>}
+          </p>
+        </div>
       )}
     </div>
   )
