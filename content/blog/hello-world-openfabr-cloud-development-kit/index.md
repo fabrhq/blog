@@ -18,5 +18,3 @@ In short, we believe that MODULAR + CUSTOM is the future of DevOps propelled by 
 This is for you, the #developers who always like to tinker. You have had #rubyonrails to #ruby, #springboot to #java and countless #nodejs and #react frameworks to #javascript / #typescript, all of which gave you a huge productivity boost. It is time for that #framework to emerge for DevOps. It is #openfabr CDF.
 
 Go check it out and tell us what you think through all the channels made available to you. Thank you!
-
-Supporting #aws by Amazon | #gcp by Google | #azure by Microsoft | DigitalOcean | Cloudflare and more to come
