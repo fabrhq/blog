@@ -7,7 +7,7 @@ description: "Releasing OpenFABR Cloud Development Kit (CDF) V2"
 
 ![OpenFABR CDF V2 Release Image](./openfabr-cdf-v2-release-1500x500.png)
 
-Since the launch of [OpenFABR CDF](https://github.com/openfabr/cdf) in November 2022, we have been busy bringing the framework to more IaC runtime. With **V2** release, you can implement packages in [cdk8s](https://cdk8s.io/) and [Pulumi](https://pulumi.com), which should cover majority of the imperative IaC landscape. 
+Since the launch of [OpenFABR CDF](https://github.com/openfabr/cdf) in November 2022, we have been busy bringing the framework to more IaC runtimes. With **V2**, you can implement packages in [cdk8s](https://cdk8s.io/) and [Pulumi](https://pulumi.com), which covers the majority of the imperative IaC landscape. 
 
 The use cases of these two can be quite different, according to the views *in the field*:
 - We have seen many large engineering organisations offering varying degree of customisation to engineers in product teams to customise their k8s provisioning. With **cdk8s** and now OpenFABR CDF V2, [managing k8s resource](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/) can be easily built into an abstraction layer integrated into organisations' [GitOps](https://www.gitops.tech/) and/or [internal developer platform](https://internaldeveloperplatform.org/). Technically, it is influenced by [AWS CDK](https://aws.amazon.com/cdk/) with a smaller set of constructs corresponding to core k8s concepts, making it ideal for the use case. 
