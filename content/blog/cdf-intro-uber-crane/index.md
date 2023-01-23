@@ -7,7 +7,7 @@ description: "Real World FABR: w.r.t. Crane, Uber's Next-Gen Infrastructure Stac
 
 *This is part of the `Glue` series introducing FABR, including [OpenFABR CDF](https://github.com/openfabr/cdf) and [FABR Infra](https://fabrhq.com), in real-world scenarios where actionable recommendations can be applied to solve infrastructure challenges.*
 
-![Glue series: FABR and Uber's Crane](./fabr-uber-glue.png)
+![Glue series: FABR and Uber's Crane](./FABR-UBER-glue.png)
 
 On Uber's [Engineering Blog](https://www.uber.com/blog/engineering/), there is an insightful post about [Crane: Uber's Next-Gen infrastructure Stack](https://www.uber.com/en-GB/blog/crane-ubers-next-gen-infrastructure-stack/) that reveals many intrigue details about the effort behind rebuilding Uber's infrastructure. 
 
