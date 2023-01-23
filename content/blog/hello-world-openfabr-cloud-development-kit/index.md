@@ -1,8 +1,8 @@
 ---
-title: "Hello World - OpenFABR Cloud Development Kit"
+title: "Hello World - OpenFABR Cloud Development Framework"
 date: "2022-11-29T22:12:03.284Z"
 author: "Chen Wang"
-description: "Launching OpenFABR Cloud Development Kit (CDF)"
+description: "Launching OpenFABR Cloud Development Framework (CDF)"
 ---
 
 ![OpenFABR CDF Image](openfabr-cdf-header-1280x640.png)

@@ -1,7 +1,7 @@
 ---
 title: "Real World FABR: w.r.t. Crane, Uber's Next-Gen Infrastructure Stack"
 date: "2023-01-23T11:20:00.000Z"
-author: "Chen Wang & Janaka Abeywardhana"
+author: "Chen Wang"
 description: "Real World FABR: w.r.t. Crane, Uber's Next-Gen Infrastructure Stack"
 ---
 
@@ -20,6 +20,8 @@ A few surprising facts from the post:
 There are in-depth descriptions of how Uber tackles those challenges throughout the post, which makes an excellent read.
 
 We thought it would be a fun thought experiment to run through how FABR could help resolve some of the challenges.
+
+*Disclaimer: There are NO commercial interests between FABR and Uber as of the time of this blog post.*
 
 ## Repeatable infrastructure & Layered Dependencies
 
