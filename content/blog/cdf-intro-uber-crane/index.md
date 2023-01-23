@@ -5,11 +5,11 @@ author: "Chen Wang"
 description: "Real World FABR: w.r.t. Crane, Uber's Next-Gen infrastructure Stack"
 ---
 
-*This is part of the series introducing FABR, including [OpenFABR CDF](https://github.com/openfabr/cdf) and [FABR Infra](https://fabrhq.com), in real-world scenarios where actionable recommendations can be applied to solve infrastructure challenges.*
+*This is part of the `glue` series introducing FABR, including [OpenFABR CDF](https://github.com/openfabr/cdf) and [FABR Infra](https://fabrhq.com), in real-world scenarios where actionable recommendations can be applied to solve infrastructure challenges.*
 
-TODO: add a title image with FABR + Uber Crane
+![Glue series: FABR and Uber's Crane](./fabr-uber-glue.png)
 
-On [Uber](https://uber.com)'s [Engineering Blog](https://www.uber.com/blog/engineering/), there is an insightful post about [Crane: Uber's Next-Gen infrastructure Stack](https://www.uber.com/en-GB/blog/crane-ubers-next-gen-infrastructure-stack/) that reveals many intrigue details about the effort behind rebuilding Uber's infrastructure. 
+On Uber's [Engineering Blog](https://www.uber.com/blog/engineering/), there is an insightful post about [Crane: Uber's Next-Gen infrastructure Stack](https://www.uber.com/en-GB/blog/crane-ubers-next-gen-infrastructure-stack/) that reveals many intrigue details about the effort behind rebuilding Uber's infrastructure. 
 
 A few surprising facts from the post:
 
@@ -76,7 +76,7 @@ Let's see how we achieve this with FABR within a large, established engineering 
 7. Now product engineers can make use of the package by creating a CDF-based configuration file to compose the proposed infrastructure setup earlier.
 8. FABR offers two ways for product teams to spin up infrastructure like this:
   - Keep everything in the version control system and use OpenFABR CDF directly in your project with a CI/CD pipeline set up. In this example it would be a standard Terraform CI/CD setup that runs `terraform apply`.
-  - Use FABR Infrastructure, click the *launch* button.
+  - Use FABR Infrastructure, click the `Launch` button.
 9. Additionally, product engineers can write custom code blocks in Go in the format defined by the package. This allows infra customisation for particular product needs. The code will then be reviewed by platform engineers, just like what a good software engineering process should be. 
 10. Rinse and repeat to fine-tune:
    1. For the platform teams, Step 1-6.
