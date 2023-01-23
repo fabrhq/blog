@@ -57,9 +57,9 @@ const Layout = ({ location, title, children }) => {
         {header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()} FABR Ltd (Reg No. 14231816), Built with
+        © 2022 - {new Date().getFullYear()} FABR. All rights reserved. | Book a 
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <a href="https://calendly.com/cwcwcw/fabr">Call</a> with FABR
       </footer>
     </div>
   )

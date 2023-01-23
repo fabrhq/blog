@@ -1,8 +1,8 @@
 ---
-title: "OpenFABR Cloud Development Kit V2 Release"
+title: "OpenFABR Cloud Development Framework V2 Release"
 date: "2022-12-22T12:14:03.000Z"
 author: "Chen Wang"
-description: "Releasing OpenFABR Cloud Development Kit (CDF) V2"
+description: "Releasing OpenFABR Cloud Development Framework (CDF) V2"
 ---
 
 ![OpenFABR CDF V2 Release Image](./openfabr-cdf-v2-release-1500x500.png)
