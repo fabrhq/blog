@@ -50,17 +50,6 @@ const Bio = ({ authorName }) => {
         bioDescription: "Co-founder CEO @ FABR. "
       }
       break;
-    case "Gautam Sreekumar":
-      authorProfile = {
-        name: authorName,
-        photoFileName: "",
-        social: {
-          twitterHandle: "@",
-          linkedinHandle: "",
-        },
-        bioDescription: ""
-      }
-      break;
     default:
       authorProfile = {
         name: "FABR",
@@ -68,8 +57,9 @@ const Bio = ({ authorName }) => {
         social: {
           twitterHandle: "@fabr_hq",
           linkedinHandle: "fabrhq",
+          githubHandle: "openfabr",
         },
-        bioDescription: "Some bio text about FABR here"
+        bioDescription: "FABR empowers developers to design, provision and observe cloud infrastructure - CHEAPER and FASTER. "
       }
       break;
   }
