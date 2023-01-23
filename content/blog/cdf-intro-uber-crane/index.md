@@ -19,7 +19,7 @@ A few surprising facts from the post:
 
 There are in-depth descriptions of how Uber tackles those challenges throughout the post, which makes an excellent read.
 
-We thought it would be a fun thought experiment to run through how OpenFABR CDF could help resolve some of the challenges.
+We thought it would be a fun thought experiment to run through how FABR could help resolve some of the challenges.
 
 ## Repeatable infrastructure & Layered Dependencies
 
@@ -32,20 +32,19 @@ These two things significantly reduced the time to spin up a new zone, from mont
 
 ### Using OpenFABR CDF
 
-OpenFABR CDF is a framework for building IaC using imperative programming languages like TypeScript, Python, or Golang. It's the glue that gives IaC the full software lifecycle support.
+OpenFABR CDF is a framework for building IaC using imperative programming languages like TypeScript, Python, or Golang. It is the glue that gives IaC the full software lifecycle support. In this case, the likes of Terraform CDK, paired with Golang as the programme language of the choice, would fit Uber's infrastructure implementation as described in the post.
 
-- Pick either CDK Terraform or Pulumi as the IaC runtime and language. Because Uber needs to support hybrid and multi-cloud AWS CDK out of the mix. We'll pick CDK TF and Golang.
-- We'll have to build custom providers for the on-prem custom infrastructure (see [Writing Custom Terraform Providers](https://www.hashicorp.com/blog/writing-custom-terraform-providers)). We assume they have the needed control plane APIs.
-- Develop contructs to represent the various infrastructure abstractions. Publish them as a Go package(s) into your standard Go package repository. They can then be imported as dependencies in other IaC codebase.
-- Transitive dependencies can cause the circular dependencies problem as mentioned earlier, however some dependency-focused static code analysis tools could pick out abnormal inter-layer dependencies easily, similar to how [GitHub Dependabot](https://github.com/dependabot) works.
+With imperative Iac, building blocks (`constructs` as described in some frameworks) can be developed, tested and then published just as normal software packages, perhaps in *Golang* as the post mentioned. Once they are in Go package repository, they can be imported as dependencies and used in other IaC codebase.
 
-In this way, using CDF, a complex infrastructure like Uber's could be designed and implemented from small, single-purpose components all the way up to powerful high-level packages that are developer-facing for them to self-manage their own pieces of infrastructure.
+Speaking of dependencies, transitive dependencies can cause the circular dependencies problem as mentioned earlier, however some dependency-focused static code analysis tools could pick out abnormal inter-layer dependencies easily, similar to how [GitHub Dependabot](https://github.com/dependabot) works.
+
+By adopting OpenFABR CDF, a complex infrastructure like Uber's could be designed and implemented from small, single-purpose components all the way up to powerful high-level packages that are developer-facing for them to self-manage their own pieces of infrastructure.
 
 ## Config & Change Management
 
 The *Config and Change Management* section of the post describes that they did some discovery and research to decide on how developers would interact with the infrastructure automation. They decided to use base this on [Starlark](https://github.com/bazelbuild/starlark).
 
-### What OpenFABR CDF & FABR infrastructure Can Help
+### Using OpenFABR CDF and FABR Infra
 
 Firstly, CDF defines an open standard for an extensible configuration format, tied to individual infrastructure packages. So by selecting CDF you get an integrated configuration format out-of-the-box.
 
@@ -55,19 +54,20 @@ Last but not least, our SaaS product FABR Infra offers great convenience for dev
 
 ## Example Setup with FABR
 
-Given Uber didn't share specifics about their architecture we'll make something up based what they did not share. 
+Given that the post did not share specifics about Uber's architecture, let's use a very simple infrastructure setup here for ease of understanding:
 
-- A public-facing web server on cloud vendor A.
-- An on-prem database and another database on cloud vendor B;
-- The web server has connectivity to both databases.
+- A public-facing web server on cloud vendor A;
+- An on-prem database;
+- Another database on cloud vendor B;
+- The web server should have connectivity to both databases.
 
-Remember the requirements repeatable infrastructure, layered dependencies, config, and change management. Also, we picked CDK TF and Golang.
+Given the on-prem and multi-cloud nature of the infrastructure mentioned in the post, we will pick Terraform CDK as the imperative IaC tool, with some help from Golang which is also mentioned in the post.
 
-Let's see how we achieve this with FABR as a platform team:
+Let's see how we achieve this with FABR within a large, established engineering organisation such as Uber's, with both platform teams and product teams:
 
-1. first we'll have to develop a Terraform provider for our on-prem infrastructure (assumes it's not based on an off-the-shelf stack that has a provider).
+1. First develop a Terraform provider for our on-prem infrastructure (assuming it's not based on an off-the-shelf stack that has a provider).
 2. Develop a package with small, single-purpose, constructs for provisioning a database and web server on-prem and the cloud.
-3. then develop another package at a higher level to include the packages in step 2, plus a few other existing packages such as networking to establish connectivities between the web server and the two databases;
+3. Then develop another package at a higher level to include the packages in step 2, plus a few other existing packages such as networking to establish connectivities between the web server and the two databases.
 4. The platform teams will consider the developer-configurable attributes for the web server and the two databases, such as those related to CPU and memory allocation, according to what OpenFABR CDF lays out.
 5. Write automated tests using Testify (or insert you favourite Go test framework).
 6. The platform teams will then publish the high-level package which contains the constructs for the on-prem database, cloud database, and one web server. Constructs in CDF are typed. The databases are type `Component`, the web server type `Service` (any code deployment target), connectivity between then represented by construct type `Relation`. These are automatically exposed to developers in product teams via the FABR Infra UI.
@@ -82,7 +82,7 @@ Let's see how we achieve this with FABR as a platform team:
 
 ## Summary
 
-The original post from Uber is a case of an engineering-heavy large scale-up re-thinking and re-architecting infrastructure to better serve the entire engineering organisation. Ultimately it's about reducing the time, cost, and risk around making engineering changes.
+The original post from Uber is a case of an engineering-heavy large scale-up re-thinking and re-architecting infrastructure to better serve the entire engineering organisation. Ultimately it is about reducing the time, cost, and risk around making engineering changes.
 
 In our view:
 
@@ -93,6 +93,6 @@ By adopting OpenFABR CDF (our OSS project) and FABR Infrastructure (our SaaS pro
 
 - It becomes drastically easier to develop, test, and package infrastructure components in such a mixed infrastructure environment. CDF is designed to make this task easier for infrastructure package authors.
 - The standardised configuration format defined by CDF's modular approach not only makes config and change management easier, but also offers a free abstraction layer between organisation-wide shared infrastructure platforms and developers in the same organisation.
-- Developer self-serve wasn't stressed enough. With the adoption of FABR Infra, developer experience around infrastructure self-service is drastically improved. Developers can easily discover and use top-level infrastructure components and services made available to them.
+- With the adoption of FABR Infra, developer experience around infrastructure self-service is drastically improved. Developers can easily discover and use top-level infrastructure components and services made available to them.
 
-*If you have infrastructure challenges similar to Uber, we would love to chat.*
+*If you have infrastructure challenges similar to Uber's, we would love to chat.*
