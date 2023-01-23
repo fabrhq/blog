@@ -7,7 +7,7 @@ description: "Real World FABR: w.r.t. Crane, Uber's Next-Gen Infrastructure Stac
 
 *This is part of the `Glue` series introducing FABR, including [OpenFABR CDF](https://github.com/openfabr/cdf) and [FABR Infra](https://fabrhq.com), in real-world scenarios where actionable recommendations can be applied to solve infrastructure challenges.*
 
-![Glue series: FABR and Uber's Crane](./FABR-UBER-glue.png)
+![Glue series: FABR and Uber's Crane](./fabr-glue-uber-crane.png)
 
 On Uber's [Engineering Blog](https://www.uber.com/blog/engineering/), there is an insightful post about [Crane: Uber's Next-Gen infrastructure Stack](https://www.uber.com/en-GB/blog/crane-ubers-next-gen-infrastructure-stack/) that reveals many intrigue details about the effort behind rebuilding Uber's infrastructure. 
 
@@ -89,7 +89,7 @@ One note about package design and implementation: here we use step 2 to build fo
 
 The original post from Uber is a case of an engineering-heavy large scale-up re-thinking and re-architecting infrastructure to better serve the entire engineering organisation. Ultimately it is about reducing the time, cost, and risk around making engineering changes.
 
-![FABR Stack](./FABR-decorated-stack.png)
+![FABR Stack](./fabr-layered-stack.png)
 
 In our view:
 
