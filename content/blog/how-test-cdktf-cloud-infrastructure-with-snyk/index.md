@@ -65,7 +65,7 @@ Snyk IaC uses Open Policy Agent and its Rego language as building blocks. They d
   - Cdktf CLI
   - Terraform CLI
 
-## How-to: Scan CDKTF Config
+## How-to: Scan CDKTF Config with the Snyk CLI
 
 Config scanning doesn’t cover modules you may have referenced. To get full coverage you need to scan the plan.
 
@@ -73,7 +73,7 @@ Config scanning doesn’t cover modules you may have referenced. To get full cov
 - Run `cdktf synth` to generate the TF config files in JSON. Defaults to `--output=”./cdktf.out”`.
 - Run `snyk iac test`  to scan the configuration. You can add `--report` to push results up to Snyk and view in the web UI.
 
-## How-to: Scan CDKTF Plan
+## How-to: Scan CDKTF Plan with the Snyk CLI
 
 - Run `cdktf synth`
 - Run `cd cdktf.out/stacks/<your-project-name>`
