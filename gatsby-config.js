@@ -15,7 +15,7 @@ module.exports = {
       name: `FABRbot`,
       summary: `FABR a developer experience and tooling company specialising in cloud infrastructure.`,
     },
-    description: `The FABR Blog | Updates, ideas, and opinions from FABR.`,
+    description: `FABR Blog | Updates, ideas, and opinions from FABR.`,
     siteUrl: `https://fabrhq.com`,
     social: {
       twitterHanlde: `@fabr_hq`,
@@ -83,7 +83,7 @@ module.exports = {
                 parts: [
                   { field: "date", format: "dd mmm yyyy" },
                   " | ",
-                  { field: "author" },  
+                  { field: "author" },
                 ],
                 // Currently only supports DejaVuSansCondensed
                 // More fonts coming soon!
