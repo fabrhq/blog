@@ -1,6 +1,6 @@
 ---
 title: "How-to: Test Your CDK for Terraform Cloud Infrastructure with Snyk"
-date: "2022-02-15T16:17:03.284Z"
+date: "2023-02-15T16:17:03.284Z"
 author: "Janaka Abeywardhana"
 description: "Learn how to test cloud infrastructure provisioned by CDKTF for security vulnerabilities using Snyk"
 ---
