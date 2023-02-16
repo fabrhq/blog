@@ -8,7 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, title, children }) => {
+const Seo = ({ description, title, children, location, isPost }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -16,6 +16,7 @@ const Seo = ({ description, title, children }) => {
           siteMetadata {
             title
             description
+            siteUrl
             social {
               twitterHandle
             }
@@ -27,21 +28,35 @@ const Seo = ({ description, title, children }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  //const rootPath = `${__PATH_PREFIX__}/`
 
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{defaultTitle ? `FABR ${defaultTitle} | ${title}` : title}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:creator"
-        content={site.siteMetadata?.social?.twitterHandle || ``}
-      />
+      <meta name="twitter:site" content="@fabr_hq" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      
+      {isPost &&
+        <>
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:creator"
+            content={site.siteMetadata?.social?.twitterHandle || ``}
+          />
+          <meta
+            name="twitter:image"
+            content={`${site.siteMetadata.siteUrl}${location.pathname}twitter-card.jpg`}
+          />
+          <meta name="twitter:image:alt" content={metaDescription} />
+        </>
+      }
+
       {children}
     </>
   )
