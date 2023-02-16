@@ -66,6 +66,7 @@ export const Head = ({ data: { markdownRemark: post }, location }) => {
       title={post.frontmatter.title}
       description={post.frontmatter.description || post.excerpt}
       location={location}
+      isPost={true}
     />
   )
 }
