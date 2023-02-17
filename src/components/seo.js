@@ -34,9 +34,6 @@ const Seo = ({ description, title, children, location, isPost }) => {
     <>
       <title>{defaultTitle ? `FABR ${defaultTitle} | ${title}` : title}</title>
       <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@fabr_hq" />
       <meta name="twitter:title" content={title} />
@@ -44,6 +41,7 @@ const Seo = ({ description, title, children, location, isPost }) => {
       
       {isPost &&
         <>
+
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:creator"
@@ -57,6 +55,15 @@ const Seo = ({ description, title, children, location, isPost }) => {
         </>
       }
 
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      {isPost &&
+        <>
+          <meta property="og:image" content={`${site.siteMetadata.siteUrl}${location.pathname}twitter-card.jpg`} />
+          <meta property="og:url" content={`${site.siteMetadata.siteUrl}${location.pathname}`} />
+        </>
+      }
       {children}
     </>
   )
