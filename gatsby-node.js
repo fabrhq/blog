@@ -6,6 +6,7 @@
 
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { generateCard, configOptions } = require('./src/libs/social-card-generator')
 
 // Define the template for blog post
 const blogPost = path.resolve(`./src/templates/blog-post.js`)
@@ -22,6 +23,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
         nodes {
           id
+          frontmatter {
+            title
+            author
+            date(formatString: "DD MMMM YYYY")
+          }  
           fields {
             slug
           }
@@ -57,7 +63,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostId,
           nextPostId,
         },
-      })
+      });
+
+      if (post.fields) {
+        const output = path.join(
+          "./public",
+          post.fields.slug,
+          "social-card.jpg"
+        );
+        
+        // generate the social summary card image
+        generateCard(post.frontmatter, configOptions)
+          .then(image =>
+            image
+              .writeAsync(output)
+              .then(() => console.log("Generated social summary card image:", output))
+              .catch(err => console.log("ERROR GENERATING SOCIAL SUMMARY CARD", err))
+          )
+          .catch(console.error);
+      }
+
     })
   }
 }
