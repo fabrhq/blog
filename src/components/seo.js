@@ -49,7 +49,7 @@ const Seo = ({ description, title, children, location, isPost }) => {
           />
           <meta
             name="twitter:image"
-            content={`${site.siteMetadata.siteUrl}${location.pathname}twitter-card.jpg`}
+            content={`${site.siteMetadata.siteUrl}${location.pathname}social-card.jpg`}
           />
           <meta name="twitter:image:alt" content={metaDescription} />
         </>
@@ -60,7 +60,7 @@ const Seo = ({ description, title, children, location, isPost }) => {
       <meta property="og:type" content="website" />
       {isPost &&
         <>
-          <meta property="og:image" content={`${site.siteMetadata.siteUrl}${location.pathname}twitter-card.jpg`} />
+          <meta property="og:image" content={`${site.siteMetadata.siteUrl}${location.pathname}social-card.jpg`} />
           <meta property="og:url" content={`${site.siteMetadata.siteUrl}${location.pathname}`} />
         </>
       }
