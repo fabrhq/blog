@@ -57,13 +57,26 @@ const Seo = ({ description, title, children, location, isPost }) => {
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
+      
       {isPost &&
         <>
+          
           <meta property="og:image" content={`${site.siteMetadata.siteUrl}${location.pathname}social-card.jpg`} />
           <meta property="og:url" content={`${site.siteMetadata.siteUrl}${location.pathname}`} />
         </>
       }
+
+      {isPost ?
+        <>
+          <meta property="og:type" content="article" />
+          <meta property="article:published_time" content="" />
+          
+        </>
+        :
+        <meta property="og:type" content="website" />
+      }
+
+
       {children}
     </>
   )
