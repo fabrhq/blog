@@ -31,9 +31,9 @@ The key technologies used in the converter are:
 
 We wrote a UnifiedJS Markdown transformer (plugin) to convert an entire doc. A doc contains many inline code and block code elements. RemarkJS parses the markdown (and frontmatter) into an AST (Abstract Syntax Tree). Our transformer traverses the AST, finds the nodes we want to convert, and then applies the treatment needed. Unfortunately, the UnifiedJS function for processing a folder full of docs didn't quite work as needed. So that functionality needed to be written as well.
 
-The two main challenges are 
+The two main challenges are:
 
-1. Efficiently processing a large number of documents, both converting and static site generation. 
+1. Efficiently processing a large number of documents, both converting and static site generation.
 
 2. Dealing with the slight style variations between each provider's docs.
 
