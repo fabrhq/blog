@@ -8,7 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = ({ description, title, children, location, isPost }) => {
+const Seo = ({ description, title, children, location, author, publishDate, isPost }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -33,7 +33,8 @@ const Seo = ({ description, title, children, location, isPost }) => {
   return (
     <>
       <title>{defaultTitle ? `FABR ${defaultTitle} | ${title}` : title}</title>
-      <meta name="description" content={metaDescription} />
+      <meta name="description" property="og:description" content={metaDescription} />
+      
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@fabr_hq" />
       <meta name="twitter:title" content={title} />
@@ -41,7 +42,7 @@ const Seo = ({ description, title, children, location, isPost }) => {
       
       {isPost &&
         <>
-
+          <meta name="author" content={author}></meta>
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:creator"
@@ -55,13 +56,13 @@ const Seo = ({ description, title, children, location, isPost }) => {
         </>
       }
 
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
+      <meta name="title" property="og:title" content={title} />
+      
       
       {isPost &&
         <>
           
-          <meta property="og:image" content={`${site.siteMetadata.siteUrl}${location.pathname}social-card.jpg`} />
+          <meta name="image" property="og:image" content={`${site.siteMetadata.siteUrl}${location.pathname}social-card.jpg`} />
           <meta property="og:url" content={`${site.siteMetadata.siteUrl}${location.pathname}`} />
         </>
       }
@@ -69,7 +70,10 @@ const Seo = ({ description, title, children, location, isPost }) => {
       {isPost ?
         <>
           <meta property="og:type" content="article" />
-          <meta property="article:published_time" content="" />
+          <meta property="article:published_time" content={publishDate} />
+          <meta property="profile:first_name" content={author.split(" ")[0]} />
+          <meta property="profile:last_name" content={author.split(" ")[1]} />
+          
           
         </>
         :
