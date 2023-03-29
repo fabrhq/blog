@@ -2,7 +2,7 @@
 title: "Terraform Provider Docs for CDKTF"
 date: "2023-03-25T10:14:03.000Z"
 author: "Janaka Abeywardhana"
-description: "Announcing Terraform provider docs with code blocks conversed to CDKTF"
+description: "Announcing (unofficial) Terraform provider docs with HCL code blocks converted to CDKTF"
 ---
 
 When working with CDKTF have you found it a pain that the provider docs are in HCL? We did and were suprised we couldn't find version for TypeScript, Python etc. It was making life just a little bit harder on top of everything else. So we decided to do something about it and publish a version with code blocks and references converted into CDKTF. We've started with AWS, Azure, and Google providers and TypeScript as the first language.
