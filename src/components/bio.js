@@ -72,7 +72,7 @@ const Bio = ({ authorName }) => {
   return (
     // StaticImage doesn't access dynamic values for the `src` prop. This is the simplest solution
     <div className="bio">
-      {(authorProfile.name == "Janaka Abeywardhana") &&
+      {(authorProfile.name === "Janaka Abeywardhana") &&
         <StaticImage
           className="bio-avatar"
           layout="fixed"
@@ -83,7 +83,7 @@ const Bio = ({ authorName }) => {
           quality={95}
           alt="Profile picture"
         />}
-      {(authorProfile.name == "Chen Wang") &&
+      {(authorProfile.name === "Chen Wang") &&
         <StaticImage
           className="bio-avatar"
           layout="fixed"
