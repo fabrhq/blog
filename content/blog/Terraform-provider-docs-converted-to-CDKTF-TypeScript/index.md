@@ -9,7 +9,7 @@ Have you found it a pain that there aren't any Terraform provider docs for CDKTF
 
 Check it out:
 
-[https://openfabr.github.io/terraform-provider-cdk-docs](https://openfabr.github.io/terraform-provider-cdk-docs/])
+[https://openfabr.github.io/terraform-provider-cdk-docs](https://openfabr.github.io/terraform-provider-cdk-docs/)
 
 There are likely a few rough edges. The Hashicorp converter itself has limitations, but they are working on it. The next release is expected to have improvements to the converter functionality.
 If you find a problem please let us know. Create an issue on the [repo](https://github.com/openfabr/terraform-provider-cdk-docs).
