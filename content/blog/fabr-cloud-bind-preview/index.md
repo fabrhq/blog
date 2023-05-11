@@ -13,7 +13,9 @@ The working name is FABR Cloud Bind. Check it out [https://github.com/openfabr/f
 
 At a high level, it's a CLI that takes a simple config file with secret key names as input. It spits out source code for a client library with named properties that bind to the list of secrets. The example below is what it looks like in TypeScript. The preview only implements TypeScript at the moment.
 
-```typescript generated class
+Example generated class:
+
+```typescript
 export class MySecrets extends Secrets {
   database1() { // 'key' name from the params.fabr.json file 
     return this.getSecret("database1"); // probably should add caching here?
@@ -21,7 +23,9 @@ export class MySecrets extends Secrets {
 }
 ```
 
-```typescript example usage in app code
+Example usage in app code:
+
+```typescript
 import { FakeSecretService } from "./fabr-bind/libs/FakeSecretService";
 // import { IFabrParams } from "./fabr-bind/libs/IFabrParams";
 import { MySecrets } from "./fabr-bind/MySecrets";
