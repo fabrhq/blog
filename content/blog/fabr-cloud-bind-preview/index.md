@@ -1,6 +1,6 @@
 ---
 title: "FABR Cloud Bind Preview"
-date: "2023-06-11T10:26:03.000Z"
+date: "2023-05-11T10:26:03.000Z"
 author: "Janaka Abeywardhana"
 description: "An easier way to securely bind your application code to backends like databases."
 ---
