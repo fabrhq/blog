@@ -17,7 +17,7 @@ Example generated class:
 
 ```typescript
 export class MySecrets extends Secrets {
-  database1() { // 'key' name from the params.fabr.json file 
+  database1() { // property name from the key in params.fabr.json file 
     return this.getSecret("database1"); // probably should add caching here?
   }
 }
@@ -27,13 +27,12 @@ Example usage in app code:
 
 ```typescript
 import { FakeSecretService } from "./fabr-bind/libs/FakeSecretService";
-// import { IFabrParams } from "./fabr-bind/libs/IFabrParams";
 import { MySecrets } from "./fabr-bind/MySecrets";
 
-// instantiating the generated class.
+// instantiating the generated class with an instance of your secret store adaptor
 const mysecrets = new MySecrets(new FakeSecretService()); 
 
-console.log(`Value from 'database1': ${mysecrets.database2()}`)
+console.log(`'database1' connection string with username/password: ${mysecrets.database1()}`)
 ```
 
 The CLI supports generating client code in one of two modes:
